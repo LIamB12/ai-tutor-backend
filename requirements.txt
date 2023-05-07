@@ -13,4 +13,7 @@ Werkzeug==1.0.1
 Flask-Cors==3.0.10
 cohere==4.3.1
 gunicorn==20.1.0
+colorama==0.4.6
+openai==0.27.6
+tqdm==4.65.0
 
