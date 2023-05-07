@@ -20,7 +20,7 @@ def answer_question(input_string):
     userGrade = inputs[1]
     response = co.generate(
     model='command-xlarge-nightly',
-    prompt= "#context respond to the following prompt as an tutor for students in " + userGrade + ": #prompt " + userQuestion + ". #context If the prompt is not academics related, remind them to stay on topic",
+    prompt= "#context respond to the following prompt as an tutor for students in " + userGrade + ". If the prompt is not academics related, remind them to stay on topic. Here is the question: #prompt " + userQuestion + ".",
     max_tokens=300,
     temperature=0.9,
     k=0,
