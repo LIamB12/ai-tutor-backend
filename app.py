@@ -20,13 +20,14 @@ def answer_question(input_string):
     userGrade = inputs[1]
     response = co.generate(
     model='command-xlarge-nightly',
-    prompt= "respond to the following prompt as an tutor for students in " + userGrade + ": " + userQuestion,
+    prompt= "#context respond to the following prompt as an tutor for students in " + userGrade + ": #prompt " + userQuestion + ". #context If the prompt is not academics related, remind them to stay on topic",
     max_tokens=300,
     temperature=0.9,
     k=0,
     stop_sequences=[],
     return_likelihoods='NONE')
     return('{}'.format(response.generations[0].text))
+
 
 @app.route('/api/sayhi/<string:input_string>', methods=['GET'])
 
